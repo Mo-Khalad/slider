@@ -1,0 +1,66 @@
+.item{
+    position:relative;
+}
+.item-caption{
+    background-color:#fff;
+    width: 80%;
+    position: absolute;
+    top:58%;
+    left: 10%;
+    padding:7px;
+}
+#lightbox-container{
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;    
+}
+#lightbox-item{
+    width: 60%;
+    height: 550px;
+    background-image: url(../imags/portfolio-1.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+#close{
+    position: absolute;
+    top:15px;
+    right: 16px;
+}
+@media screen and (max-width:567px) {
+    #lightbox-item{
+    width:95%;
+    height: 550px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
