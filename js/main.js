@@ -5,9 +5,10 @@ var closeIcon=document.getElementById("close");
 var nextIcon=document.getElementById("next");
 var prevIcon=document.getElementById("prev")
 var index;
-
+let Interval = ''
 for(var i=0;i<imgs.length;i++){
     imgs[i].addEventListener("click",function(e){
+    Interval = setInterval( getNext ,2000)  
     lightboxContainer.style.display="flex";
     let imgSrc=e.target.src;
     lightboxItem.style.backgroundImage=`url(${imgSrc})`;
@@ -50,6 +51,7 @@ document.addEventListener("keydown",function(e){
 })
 function getClose(){
      lightboxContainer.style.display="none";
+     clearInterval(Interval)
 }
 lightboxContainer.addEventListener('click',function(e){
     if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon){
