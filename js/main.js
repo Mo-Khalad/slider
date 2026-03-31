@@ -6,6 +6,8 @@ var nextIcon=document.getElementById("next");
 var prevIcon=document.getElementById("prev")
 var index;
 let Interval = ''
+
+//slider show function
 for(var i=0;i<imgs.length;i++){
     imgs[i].addEventListener("click",function(e){
     Interval = setInterval( getNext ,2000)  
@@ -16,6 +18,7 @@ for(var i=0;i<imgs.length;i++){
 })
 }
 
+// arrow next function
 function getNext(){
 index++;
 if(index==imgs.length){
@@ -26,6 +29,8 @@ lightboxItem.style.backgroundImage=`url(${imgSrc})`;
 
 }
 nextIcon.addEventListener("click", getNext)
+
+// arrow prev function
 function getPrev(){
 index--;
 if(index<0){
@@ -35,20 +40,7 @@ var imgSrc=imgs[index].src;
 lightboxItem.style.backgroundImage=`url(${imgSrc})`;
 }
 prevIcon.addEventListener("click",getPrev)
-
-document.addEventListener("keydown",function(e){
-    if(e.key=='ArrowRight')
-    {
-        getNext()
-    }
-    else if(e.key=="ArrowLeft")
-    {
-        getPrev()
-    }
-    else if(e.key=='Escape'){
-        getClose();
-    }
-})
+//slider hide function
 function getClose(){
      lightboxContainer.style.display="none";
      clearInterval(Interval)
@@ -58,6 +50,20 @@ lightboxContainer.addEventListener('click',function(e){
         getClose();
     }
 })
+//Use the keyboard function to navigate between the next, previous, and hide items.
+function getKeyboard(e){
+ if(e.key=='ArrowRight'){
+        getNext()
+    }
+    else if(e.key=="ArrowLeft"){
+        getPrev()
+    }
+    else if(e.key=='Escape'){
+        getClose();
+    }
+}
+document.addEventListener("keydown", getKeyboard)
+
 
 
 
