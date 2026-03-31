@@ -40,11 +40,13 @@ var imgSrc=imgs[index].src;
 lightboxItem.style.backgroundImage=`url(${imgSrc})`;
 }
 prevIcon.addEventListener("click",getPrev)
+
 //slider hide function
 function getClose(){
      lightboxContainer.style.display="none";
      clearInterval(Interval)
 }
+
 lightboxContainer.addEventListener('click',function(e){
     if(e.target!=lightboxItem&&e.target!=prevIcon&&e.target!=nextIcon){
         getClose();
